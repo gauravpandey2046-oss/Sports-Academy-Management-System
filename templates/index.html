@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sports Academy - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Sports Academy Training & Management</h1>
+        <p>Manage your academy tournaments and training sessions efficiently.</p>
+        <div class="nav-links">
+            <a href="{{ url_for('tournaments') }}" class="btn">View Tournaments</a>
+            <a href="{{ url_for('add_tournament') }}" class="btn">Add New Tournament</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tournaments List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Active Tournaments</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tournament Name</th>
+                    <th>Sport</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for t in tournaments %}
+                <tr>
+                    <td>{{ t['id'] }}</td>
+                    <td>{{ t['name'] }}</td>
+                    <td>{{ t['sport'] }}</td>
+                    <td>{{ t['date'] }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="4">No tournaments added yet.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <a href="{{ url_for('index') }}" class="btn">Back to Home</a>
+        <a href="{{ url_for('add_tournament') }}" class="btn">Add Tournament</a>
+    </div>
+</body>
+</html>
